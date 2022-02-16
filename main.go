@@ -14,7 +14,7 @@ func main() {
 	e.Use(middleware.Recover())
 
 	e.GET("/", func(c echo.Context) error {
-		return c.HTML(http.StatusOK, "Hello, Docker! <3"+time.Now().String())
+		return c.HTML(http.StatusOK, "Hello, Docker! <3 "+time.Now().String())
 	})
 	e.GET("/ping", func(c echo.Context) error {
 		return c.JSON(http.StatusOK, struct{ Status string }{Status: "OK"})
